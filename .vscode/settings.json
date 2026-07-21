@@ -1,0 +1,15 @@
+{
+  "debug.javascript.defaultRuntimeVersion": "22",
+
+  "cursor.cpp.disabledLanguages": [
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "plaintext"
+  ],
+  "editor.inlineSuggest.enabled": false,
+
+  "github.copilot.enable": { "*": false },
+  "codeium.enabled": false
+}

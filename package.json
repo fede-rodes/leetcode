@@ -1,0 +1,22 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Local LeetCode practice in TypeScript",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:debug": "vitest --inspect-brk --no-file-parallelism",
+    "run": "tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}
