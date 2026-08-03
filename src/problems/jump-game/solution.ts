@@ -13,25 +13,25 @@ export function canJump(nums: number[]): boolean {
   let maxjumpPos = 0;
 
   while (currIndex < n) {
-    maxjumpPos = Math.max(maxjumpPos, nums[currIndex] + currIndex)
+    maxjumpPos = Math.max(maxjumpPos, nums[currIndex] + currIndex);
 
-    if (maxjumpPos <= currIndex && currIndex !== n - 1) return false
+    if (maxjumpPos <= currIndex && currIndex !== n - 1) return false;
 
-    currIndex++
+    currIndex++;
   }
 
-  return true
-};
+  return true;
+}
 
 export function canJumpGreedy(nums: number[]): boolean {
-  const n = nums.length
-  let goal = n - 1
+  const n = nums.length;
+  let goal = n - 1;
 
   for (let i = n - 2; i >= 0; i--) {
     if (nums[i] + i >= goal) {
-      goal = i
+      goal = i;
     }
   }
 
-  return goal === 0
+  return goal === 0;
 }

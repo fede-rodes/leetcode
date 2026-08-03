@@ -1,5 +1,5 @@
-import {describe, it, expect} from "vitest"
-import {fibonacci} from "./solution"
+import { describe, it, expect } from "vitest";
+import { fibonacci } from "./solution";
 
 describe("fibonacci", () => {
   it("works", () => {
@@ -8,6 +8,6 @@ describe("fibonacci", () => {
     // Act
     const actual = fibonacci(steps);
     // Assert
-    expect(actual.slice(0, 10)).toEqual([1,1,2,3,5,8,13,21,34,55])
-  })
-})
+    expect(actual.slice(0, 10)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
+  });
+});

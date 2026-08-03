@@ -1,7 +1,7 @@
 // Breadth first search (BFS)
 // it's used to explore a graph's surrounding and it's built using a queue
 
-export type T = string | number
+export type T = string | number;
 
 export function bfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
   const q = new Queue(); // how do we represent a queue structure?
@@ -9,7 +9,7 @@ export function bfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
   // Add the initial node
   q.push(iNode);
 
-  while(!q.isEmpty()) {
+  while (!q.isEmpty()) {
     const n: T = q.pop()!;
     // Do something with the node
     cb(n);
@@ -18,7 +18,7 @@ export function bfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
 
     adj.forEach((node) => {
       q.push(node);
-    })
+    });
   }
 }
 
@@ -43,14 +43,14 @@ class Queue {
     // shift all elements to the left
     if (n > 1) {
       for (let i = 1; i < n; i++) {
-        this.arr[i-1] = this.arr[i];
+        this.arr[i - 1] = this.arr[i];
       }
     }
 
     // Remove the last element
     this.arr.pop();
 
-    return elem
+    return elem;
   }
 
   isEmpty(): boolean {

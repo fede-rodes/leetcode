@@ -10,32 +10,32 @@ export function productExceptSelf(nums: number[]): number[] {
 
   for (let i = 0; i < n; i++) {
     if (nums[i] === 0) {
-        zeroIdx = i
-        countZeros++
-        if (countZeros > 1) break;
+      zeroIdx = i;
+      countZeros++;
+      if (countZeros > 1) break;
     }
   }
 
   if (countZeros > 1) {
-    return new Array(n).fill(0)
+    return new Array(n).fill(0);
   }
 
   // Get the poduct of all element
-  const product = nums.reduce((acc, val) => val === 0 ? acc : acc * val, 1);
+  const product = nums.reduce((acc, val) => (val === 0 ? acc : acc * val), 1);
 
   // In case there is one element with value 0
   if (countZeros === 1) {
-    const answer = new Array(n).fill(0)
+    const answer = new Array(n).fill(0);
     answer[zeroIdx!] = product;
     return answer;
   }
 
   // In case all elements are non-zero
-  const answer = new Array(n).fill(product)
+  const answer = new Array(n).fill(product);
 
-  for(let i = 0; i < n; i++) {
-    answer[i] = answer[i] / nums[i]
+  for (let i = 0; i < n; i++) {
+    answer[i] = answer[i] / nums[i];
   }
 
   return answer;
-};
+}

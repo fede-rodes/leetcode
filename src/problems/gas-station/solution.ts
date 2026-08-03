@@ -20,28 +20,28 @@ export function canCompleteCircuit(gas: number[], cost: number[]): number {
   const totalGas = gas.reduce((acc, val) => acc + val, 0);
   const totalCost = cost.reduce((acc, val) => acc + val, 0);
 
-  if (totalCost > totalGas) return -1
+  if (totalCost > totalGas) return -1;
 
   let s = 0; // start index
   let i = 0; // iterator
   let tank = 0;
 
-  while(i < n) {
+  while (i < n) {
     const cur = (s + i) % n;
     tank += gas[cur] - cost[cur];
 
     if (tank < 0) {
       tank = 0;
       s = cur + 1; // if tank < 0, it means all intermediate starting points will follow the same luck
-      i = 0
+      i = 0;
       continue;
     }
 
     i++;
   }
 
-  return s
-};
+  return s;
+}
 
 // There are n gas stations along a circular route, where the amount of gas at the ith
 // station is gas[i].

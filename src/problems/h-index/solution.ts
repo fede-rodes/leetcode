@@ -9,7 +9,7 @@ export function hIndex(citations: number[]): number {
   // citations[1] = 1 and are n-3 (3) more papers with at least 1 citation
   // then hIndex >= 1
   const n = citations.length;
-  citations.sort((a,b) => a-b)
+  citations.sort((a, b) => a - b);
 
   let hIndex = 0; // <= n
 
@@ -23,4 +23,4 @@ export function hIndex(citations: number[]): number {
   }
 
   return hIndex;
-};
+}

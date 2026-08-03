@@ -1,5 +1,5 @@
-import {describe, it, expect} from "vitest"
-import { hasPath } from "./solution"
+import { describe, it, expect } from "vitest";
+import { hasPath } from "./solution";
 
 describe("has path", () => {
   it("ex 1", () => {
@@ -11,12 +11,12 @@ describe("has path", () => {
       i: ["g", "k"],
       j: ["i"],
       k: [],
-    }
+    };
     // Act
-    const actual = hasPath(graph, "f", "k")
+    const actual = hasPath(graph, "f", "k");
     // Assert
     expect(actual).toBeTruthy();
-  })
+  });
   it("ex 2", () => {
     // Arrange
     const graph = {
@@ -26,10 +26,10 @@ describe("has path", () => {
       i: ["g", "k"],
       j: ["i"],
       k: [],
-    }
+    };
     // Act
-    const actual = hasPath(graph, "j", "f")
+    const actual = hasPath(graph, "j", "f");
     // Assert
     expect(actual).toBeFalsy();
-  })
-})
+  });
+});

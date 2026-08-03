@@ -1,6 +1,6 @@
-export type Grid = string[][]
-export type Edges = [string,string][]
-export type Graph = Record<string, string[]>
+export type Grid = string[][];
+export type Edges = [string, string][];
+export type Graph = Record<string, string[]>;
 
 export function solve(board: Grid): void {
   // First we want to discover the set of islands composed by o's.
@@ -26,19 +26,23 @@ export function solve(board: Grid): void {
   // with X. Then mark all # elements back to O
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
-      const val = board[i][j]
-      if (val === "O") { board[i][j] = "X" }
-      if (val === "#") { board[i][j] = "O" }
+      const val = board[i][j];
+      if (val === "O") {
+        board[i][j] = "X";
+      }
+      if (val === "#") {
+        board[i][j] = "O";
+      }
     }
   }
-};
+}
 
 // Explore all surrounding elements neighboring [i,j] and mark them as visited '#'
 // We'll start the exploration using a node on the border, so we are sure none
 // of its neighbors can me surrounded
 export function dfs(board: Grid, m: number, n: number, i: number, j: number): void {
-  if (i < 0 || j < 0 || i > m - 1 || j > n - 1 || board[i][j] !== "O") return
-  board[i][j] = "#" // mark element as visited
+  if (i < 0 || j < 0 || i > m - 1 || j > n - 1 || board[i][j] !== "O") return;
+  board[i][j] = "#"; // mark element as visited
   dfs(board, m, n, i - 1, j);
   dfs(board, m, n, i + 1, j);
   dfs(board, m, n, i, j - 1);
@@ -148,7 +152,6 @@ export function dfs(board: Grid, m: number, n: number, i: number, j: number): vo
 //       }
 //     }
 //   }
-
 
 //   return set;
 // }

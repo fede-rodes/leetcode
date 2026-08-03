@@ -1,7 +1,7 @@
 // Depth first search (DFS)
 // it's used to explore a graph's in depth and it's built using a stack
 
-export type T = string | number
+export type T = string | number;
 
 export function dfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
   const s = new Stack();
@@ -9,7 +9,7 @@ export function dfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
   // Add the initial node
   s.push(iNode);
 
-  while(!s.isEmpty()) {
+  while (!s.isEmpty()) {
     const n = s.pop()!;
 
     cb(n);
@@ -18,7 +18,7 @@ export function dfs(g: Record<T, T[]>, iNode: T, cb: (n: T) => void): any {
 
     adj.forEach((elem) => {
       s.push(elem);
-    })
+    });
   }
 }
 
@@ -34,7 +34,7 @@ class Stack {
 
   // Pops from the front of the queue
   pop(): T | undefined {
-    return this.arr.pop()
+    return this.arr.pop();
   }
 
   isEmpty(): boolean {

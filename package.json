@@ -8,15 +8,25 @@
     "test:run": "vitest run",
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
     "run": "tsx",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^26.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.8.0",
+    "prettier": "^3.9.6",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0",
     "vitest": "^4.1.9"
   }
 }

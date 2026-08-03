@@ -1,23 +1,23 @@
 export function maxProfit(prices: number[]): number {
-  const {length} = prices
+  const { length } = prices;
 
   // best solution
   let maxSellPrice = prices[length - 1];
   let maxProfit = 0;
 
   // Has solution
-  for(let i = length - 2; i >= 0; i--) {
+  for (let i = length - 2; i >= 0; i--) {
     const buyPrice = prices[i];
-    maxSellPrice = Math.max(prices[i+1], maxSellPrice);
+    maxSellPrice = Math.max(prices[i + 1], maxSellPrice);
     const profit = maxSellPrice - buyPrice;
 
     if (profit > maxProfit) {
-        maxProfit = profit;
-      }
+      maxProfit = profit;
+    }
   }
 
   return maxProfit;
-};
+}
 
 // export function maxProfit(prices: number[]): number {
 //   const {length} = prices

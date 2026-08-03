@@ -1,4 +1,4 @@
-export type Graph = Record<string, string[]>
+export type Graph = Record<string, string[]>;
 
 export function largest(graph: Graph): number {
   // I'd like to traverse the graph using dfs, and for every island/group
@@ -6,14 +6,14 @@ export function largest(graph: Graph): number {
   const visited = new Set<string>();
   let longest = 0;
 
-  for (let key in graph) {
+  for (const key in graph) {
     // In case the island was already visited, we return 0
-    const prev = visited.size
+    const prev = visited.size;
     dfs(graph, key, visited);
     longest = Math.max(longest, visited.size - prev);
   }
 
-  return longest
+  return longest;
 }
 
 export function dfs(graph: Graph, source: string, visited: Set<string>): void {
@@ -26,10 +26,10 @@ export function dfs(graph: Graph, source: string, visited: Set<string>): void {
   const stack = [source];
   // count++
 
-  while(stack.length > 0) {
+  while (stack.length > 0) {
     const cur = stack.pop()!;
 
-    for (let n of graph[cur]) {
+    for (const n of graph[cur]) {
       if (!visited.has(n)) {
         stack.push(n);
         // count++;

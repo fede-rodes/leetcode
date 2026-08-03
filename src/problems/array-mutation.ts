@@ -7,11 +7,11 @@ That's why mutating the object works, but reassigning the parameter doesn't affe
  */
 
 function modify(arr: number[]) {
-    arr[0] = 99;      // mutates shared object
+  arr[0] = 99; // mutates shared object
 }
 
 function replace(arr: number[]) {
-    arr = [99, 99];   // rebinds local variable
+  arr = [99, 99]; // rebinds local variable
 }
 
 const x = [1, 2];

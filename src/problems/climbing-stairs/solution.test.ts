@@ -1,5 +1,5 @@
-import {describe, it, expect} from "vitest";
-import {climbStairs} from "./solution"
+import { describe, it, expect } from "vitest";
+import { climbStairs } from "./solution";
 
 describe.skip("climb stairs", () => {
   it("n = 1", () => {
@@ -10,7 +10,7 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(1);
-  })
+  });
   it("n = 2", () => {
     // Arrange
     const n = 2;
@@ -20,7 +20,7 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(2);
-  })
+  });
   it("n = 3", () => {
     // Arrange
     const n = 3;
@@ -31,7 +31,7 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(3);
-  })
+  });
   it("n = 4", () => {
     // Arrange
     const n = 4;
@@ -44,7 +44,7 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(5);
-  })
+  });
   it("n = 5", () => {
     // Arrange
     const n = 5;
@@ -61,7 +61,7 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(8);
-  })
+  });
   it("n = 6", () => {
     // Arrange
     const n = 6;
@@ -82,5 +82,5 @@ describe.skip("climb stairs", () => {
     const actual = climbStairs(n);
     // Assert
     expect(actual).toEqual(12);
-  })
-})
+  });
+});

@@ -1,17 +1,17 @@
-import {describe, it, expect} from "vitest"
-import {dfs, type T} from "./solution"
+import { describe, it, expect } from "vitest";
+import { dfs, type T } from "./solution";
 
 describe("dfs", () => {
   it("case 1", () => {
     // Arrange
     const g: Record<T, T[]> = {
-      a: ['b', 'c'],
-      b: ['d'],
-      c: ['e'],
-      d: ['c'],
+      a: ["b", "c"],
+      b: ["d"],
+      c: ["e"],
+      d: ["c"],
       e: [],
-      f: ['e'],
-    }
+      f: ["e"],
+    };
 
     const arr: T[] = [];
 
@@ -22,9 +22,9 @@ describe("dfs", () => {
     }
 
     // Act
-    dfs(g, 'a', cb);
+    dfs(g, "a", cb);
 
     // Assert
-    expect(arr).toEqual(['a','c','e','b','d'])
-  })
-})
+    expect(arr).toEqual(["a", "c", "e", "b", "d"]);
+  });
+});
