@@ -1,6 +1,4 @@
 {
-  "debug.javascript.defaultRuntimeVersion": "22",
-
   "cursor.cpp.disabledLanguages": [
     "typescript",
     "javascript",
