@@ -17,31 +17,60 @@
 // Output: 0
 
 export function minSubArrayLen(target: number, nums: number[]): number {
-  // We'll traverse the array from left to right using 2 pointers.
-  // The 2 pointers will start at position 0
-  // we will move the right pointer to the right while the sum of the values
-  // is less than the target. Once we reach the target we start moving the
-  // left pointer forward to find anoother subarray which sum meets the target
+  const k = nums.length;
   let l = 0;
-  let r = nums.length - 1;
-  let sum = nums.reduce((acc, val) => acc + val, 0);
+  let r = l;
   let minLen = 0;
+  let sum = nums[l];
 
-  while (sum >= target) {
-    minLen = r + 1 - l;
+  if (sum >= target) return 1;
 
-    if (sum - nums[l] < sum - nums[r]) {
-      sum -= nums[l];
-      l++;
+  while (r < k) {
+    if (sum < target) {
+      r++;
+      sum += nums[r];
     } else {
-      sum -= nums[r];
-      r--;
+      // sum >= target => store solution
+      const winLen = r - l + 1;
+      minLen = minLen === 0 ? winLen : Math.min(minLen, winLen);
+      if (l < r) {
+        sum -= nums[l];
+        l++;
+      } else {
+        // sum >= target && l === r
+        return 1;
+      }
     }
   }
 
   return minLen;
 }
 
+// export function minSubArrayLen(target: number, nums: number[]): number {
+//   // We'll traverse the array from left to right using 2 pointers.
+//   // The 2 pointers will start at position 0
+//   // we will move the right pointer to the right while the sum of the values
+//   // is less than the target. Once we reach the target we start moving the
+//   // left pointer forward to find anoother subarray which sum meets the target
+//   let l = 0;
+//   let r = nums.length - 1;
+//   let sum = nums.reduce((acc, val) => acc + val, 0);
+//   let minLen = 0;
+
+//   while (sum >= target) {
+//     minLen = r + 1 - l;
+
+//     if (sum - nums[l] < sum - nums[r]) {
+//       sum -= nums[l];
+//       l++;
+//     } else {
+//       sum -= nums[r];
+//       r--;
+//     }
+//   }
+
+//   return minLen;
+// }
 // export function minSubArrayLen(target: number, nums: number[]): number {
 //   // We'll traverse the array from left to right using 2 pointers.
 //   // The 2 pointers will start at position 0

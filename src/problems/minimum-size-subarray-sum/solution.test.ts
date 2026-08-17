@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { minSubArrayLen } from "./solution";
 
-describe.skip("min subarray length", () => {
-  it.skip("ex 1", () => {
+describe("min subarray length", () => {
+  it("ex 1", () => {
     //Arrange
     const nums = [1, 4, 3, 6, 2, 1, 7];
     const target = 7;
