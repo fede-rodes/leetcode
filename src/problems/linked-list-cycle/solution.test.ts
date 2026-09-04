@@ -11,9 +11,24 @@ describe("linked list cycle", () => {
     a.next = b;
     b.next = c;
     c.next = d;
+    d.next = b;
     // Act
     const actual = hasCycle(a);
     // Assert
     expect(actual).toBeTruthy();
+  });
+  it("ex 2", () => {
+    // Arrange
+    const a = new ListNode(1);
+    const b = new ListNode(2);
+    const c = new ListNode(3);
+    const d = new ListNode(4);
+    a.next = b;
+    b.next = c;
+    c.next = d;
+    // Act
+    const actual = hasCycle(a);
+    // Assert
+    expect(actual).toBeFalsy();
   });
 });

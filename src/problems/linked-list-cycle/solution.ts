@@ -39,12 +39,56 @@ export class ListNode {
 }
 
 export function hasCycle(head: ListNode | null): boolean {
+  if (head === null) return false;
+
   let cur: ListNode | null = head;
 
+  const visited = new Set<ListNode>();
+
   while (cur !== null) {
-    console.log(cur.val);
+    if (visited.has(cur)) {
+      return true;
+    }
+    visited.add(cur);
     cur = cur.next;
   }
 
-  return true;
+  return false;
 }
+
+// export class ListNode {
+//   val: number;
+//   next: ListNode | null;
+//   constructor(val?: number, next?: ListNode | null) {
+//     this.val = val === undefined ? 0 : val;
+//     this.next = next === undefined ? null : next;
+//   }
+// }
+
+// export function hasCycle(head: ListNode | null): boolean {
+//   if (head === null) return false;
+
+//   let cur: ListNode | null = head;
+
+//   // const visited = new Set<number>();
+//   const visited: ListNode[] = [];
+
+//   while (cur !== null) {
+//     // if (visited.has(cur.val)) {
+//     if (contains(visited, cur)) {
+//       return true;
+//     }
+//     // visited.add(cur.val);
+//     visited.push(cur);
+//     cur = cur.next;
+//   }
+
+//   return false;
+// }
+
+// function contains(arr: ListNode[], target: ListNode): boolean {
+//   for (const elem of arr) {
+//     if (elem === target) return true;
+//   }
+//   return false;
+// }
