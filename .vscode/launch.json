@@ -4,6 +4,7 @@
     {
       "type": "node",
       "request": "launch",
+      "runtimeExecutable": "${env:HOME}/.local/share/mise/shims/node",
       "name": "Debug solution.ts",
       "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
       "args": ["run", "${fileDirname}/solution.test.ts"],
@@ -15,6 +16,7 @@
     {
       "type": "node",
       "request": "launch",
+      "runtimeExecutable": "${env:HOME}/.local/share/mise/shims/node",
       "name": "Debug Current Test File",
       "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
       "args": ["run", "${relativeFile}"],
